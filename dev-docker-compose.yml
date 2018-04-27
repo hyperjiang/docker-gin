@@ -1,0 +1,24 @@
+version: '2'
+services:
+  dev-gin-service:
+    container_name: dev-gin-service
+    hostname: dev-gin-service
+    build:
+      context: .
+      args:
+        - APP=docker-gin
+    image: gin-service:1.0
+    volumes:
+    - "./app:/app"
+    expose:
+    - 10000
+    ports:
+    - "10000:80"
+    networks:
+    - dev-backend
+    environment:
+    - ENV=dev
+networks:
+  dev-backend:
+    external:
+      name: dev-backend
