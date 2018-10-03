@@ -1,4 +1,4 @@
-FROM hyperjiang/golang:1.10.1 as golang
+FROM hyperjiang/golang:1.11 as golang
 
 ARG APP
 
